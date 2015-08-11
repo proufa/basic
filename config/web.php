@@ -3,6 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
+
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -38,6 +39,19 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+//--------------------ЧПУ ------------------------------
+'urlManager' => array(
+'enablePrettyUrl' => true,
+'showScriptName' => false,
+'rules' => array(
+'' => 'site/index',
+'login' => 'site/login',
+'show' => 'article/view',
+'shows/<post>-<text>' => 'article/view',
+
+),
+),
+//--------------------------------------------------------
     ],
     'params' => $params,
 ];

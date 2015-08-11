@@ -10,7 +10,6 @@ use yii\widgets\LinkPager;
 <br> Текст:<ul><b><?= $model['content'] ?></ul></b>
 <br><br><br>
 
-
 ---------
 
 

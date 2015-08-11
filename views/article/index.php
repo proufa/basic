@@ -8,7 +8,7 @@ $url=Url::base();
 <ul>
 <?php foreach ($articles as $Article): 
 $article_url="$url?r=article/view&post=$Article->id";
-
+$article_url="$url/shows/$Article->id-$Article->publish_status";
 //<a href="<?= print" $url?r=article/view&post=as"; Html::encode("{$Article->id}") 
 ?>
     <li>
@@ -19,5 +19,6 @@ $article_url="$url?r=article/view&post=$Article->id";
 <?php endforeach; ?>
 
 </ul>
+
 
 <?= LinkPager::widget(['pagination' => $pagination]) ?>
