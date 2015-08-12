@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 -- Дамп данных таблицы `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`id`, `title`) VALUES
-(1, 'oneCategory'),
-(2, 'twocategory'),
-(3, '3category');
+INSERT INTO `tbl_category` (`title`) VALUES
+('oneCategory'),
+('twocategory'),
+('3category');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

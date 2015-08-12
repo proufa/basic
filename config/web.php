@@ -3,12 +3,30 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-
     'id' => 'basic',
-'language' => 'ru-Ru',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+
+    'defaultRoute' => 'main/index',     // контроллер/метод - по умолчанию
+
     'components' => [
+
+        'urlManager' => [
+            'showScriptName' => false,          //
+            'enablePrettyUrl' => true,          //
+            'enableStrictParsing' => true,      //
+            'rules' => [
+                ['pattern' => '/', 'route' => 'main/index'],                                    // домашняя страница
+
+                // ['pattern' => 'article/<post:\d+>', 'route' => 'article/view'],                 // получить ID из URL
+              //  ['pattern' => 'article/<post:\d+>', 'route' => 'article/view2'],
+['pattern' => 'article/<post:\d+>', 'route' => 'article/view2'],
+
+                ['pattern' => '<controller>', 'route' => '<controller>/index'],                 // если 1 параметр в URL то это имя контроллера
+                ['pattern' => '<controller>/<action>', 'route' => '<controller>/<action>'],     // стандартно: http://localhost/article/index: /article/index
+            ]
+        ],
+
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'u1m1QVEUFn1vVqzjKsLXN9ACR8apBndd',
@@ -40,19 +58,6 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-//--------------------ЧПУ ------------------------------
-'urlManager' => array(
-'enablePrettyUrl' => true,
-'showScriptName' => false,
-'rules' => array(
-'' => 'site/index',
-'login' => 'site/login',
-'show' => 'article/view',
-'shows/<post>-<text>' => 'article/view',
-
-),
-),
-//--------------------------------------------------------
     ],
     'params' => $params,
 ];

@@ -2,15 +2,35 @@
 
 namespace app\models;
 
-use \yii\db\ActiveRecord;
-class Article extends ActiveRecord
+
+use Yii;
+use yii\db\ActiveRecord;
+use app\models\Category;
+
+class Article extends ActiveRecord 
 {
-public $nazvanie_category;
+
+
 
  public static function tableName()
     {
         return 'tbl_post';
     }
+
+public function getId()
+    {
+        return $this->id;// тут нефига не выводит
+    }
+
+//-----------------------------связь с категориями-------------------------------------------------
+ public function LoadCat($num)// работает только если принудительно принимать значение
+    {
+//$result= Category::findOne(['id'=>$num]);
+$result = Category::find()->where(['id' => $num])->one();
+
+return $result->title;
+    }
+//------------------------------------------------------------------------------
 
 // Так для сейва.  убивашка тегов:)
  public static function close_tags($content)

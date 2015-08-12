@@ -42,12 +42,12 @@ Yii::$app->view->registerJsFile('/js/rooms-list.js', ['yii\web\JqueryAsset']);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
+            ['label' => 'Home', 'url' => ['/site/index']],
 ['label' => 'Статьи', 'url' => ['/article']],
-            ['label' => 'О сайте', 'url' => ['/site/about']],
-            ['label' => 'Обратная связь', 'url' => ['/site/contact']],
+            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
-                ['label' => 'Авторизация', 'url' => ['/site/login']] :
+                ['label' => 'Login', 'url' => ['/site/login']] :
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],

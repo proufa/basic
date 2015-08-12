@@ -1,3 +1,6 @@
+/config/db.php
+/config/sql_read
+
 # phpstorm project files
 .idea
 
