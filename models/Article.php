@@ -10,24 +10,17 @@ use app\models\Category;
 class Article extends ActiveRecord 
 {
 
-
-
  public static function tableName()
     {
         return 'tbl_post';
     }
 
-public function getId()
-    {
-        return $this->id;// тут нефига не выводит
-    }
 
 //-----------------------------связь с категориями-------------------------------------------------
- public function LoadCat($num)// работает только если принудительно принимать значение
+ public function LoadCat($num)//
     {
 //$result= Category::findOne(['id'=>$num]);
 $result = Category::find()->where(['id' => $num])->one();
-
 return $result->title;
     }
 //------------------------------------------------------------------------------

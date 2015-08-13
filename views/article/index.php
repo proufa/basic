@@ -7,9 +7,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+use app\components\HelloWidget;
 
 ?>
-
+<?= HelloWidget::widget() ?>
 <h1>Статьи</h1>
 <ul>
     <? foreach ($articles as $Article): ?>
