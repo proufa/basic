@@ -18,7 +18,7 @@ class ArticleController extends Controller
 
     public function actionPokaz()
     {
-        $this->message = 'asdasd';
+        return  'asdasd';
     }
 
     public function actionIndex()
